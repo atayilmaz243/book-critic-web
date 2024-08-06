@@ -1,0 +1,10 @@
+
+	.clamped-text {
+	  display: -webkit-box;
+	  -webkit-line-clamp: 2; /* number of lines to show */
+	  -webkit-box-orient: vertical;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  max-height: 3em; /* 2 lines * 1.5em line-height */
+	  line-height: 1.5em; /* line height */
+	}
