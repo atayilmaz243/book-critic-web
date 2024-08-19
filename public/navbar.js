@@ -2,7 +2,56 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded",function() {
+
+
+	const style = document.createElement('style');
+	style.innerHTML = `
+	    .autocomplete-item:hover {
+	        background-color: rgb(108,117,125);
+	    }
+	`;
+
+	document.head.appendChild(style);
+
+	fetch('http://localhost:3000/getUsername')
+	.then(response => response.json())
+	.then(async user => {
+		if (user.username)
+		{
+			document.querySelector('#not-logged').style.display = 'none'
+			document.querySelector('#nav-username').innerHTML = user.username
+			document.querySelector('#logged').style.display = 'block'
+			document.querySelector('#nav-profile').href = `profile?user=${user.username}`
+
+			document.querySelector('#logout-button').addEventListener('click',async () => {
+
+
+			const response = await fetch('/logout', {
+		      method: 'POST',
+		      headers: {
+		        'Content-Type': 'application/json'
+		      }
+		    });
+
+			if (response.ok)
+			{
+
+				document.querySelector('#not-logged').style.display = 'block'
+				document.querySelector('#logged').style.display = 'none'
+			}
+			else
+			{
+				console.log('Logout failed.')
+			}
+
+
+			})
+		}
+	})
+	.catch(error => {
+		console.log(error)
+	});
 
 
     var searchInput = document.getElementById("nav-search-bar");
@@ -12,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     	if (event.key === 'Enter')
     	{
     		event.preventDefault();
-    		console.log('aa')
+    		// console.log('aa')
     		window.location.href = `http://localhost:3000/search-results?query=${this.value}`;
     	}
     })
@@ -30,13 +79,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	            var item = document.createElement("div");
 	            item.classList.add("autocomplete-item");
 	            item.innerText = doc.title
-	            item.style.paddingLeft = '15px';
-	            item.style.paddingRight = '15px';
-	            item.style.cursor = 'pointer';
+
+				item.style.cssText = 'padding-left: 15px; padding-right: 15px; padding-top:10px; padding-bottom:10px; cursor: pointer;';
+
 
 	            // Add click event to autocomplete item
 	            item.addEventListener("click", function() {
-	                searchInput.value = doc.title;
+
+	                window.location.href = `/book?id=${id}`
 	                autocompleteList.innerHTML = "";
 	            });
 
@@ -53,4 +103,12 @@ document.addEventListener("DOMContentLoaded", function() {
             autocompleteList.innerHTML = "";
         }
     });
+
+
+
+
+
 });
+
+
+

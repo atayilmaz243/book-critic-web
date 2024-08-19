@@ -1,0 +1,32 @@
+
+.star-rating {
+    direction: rtl;
+    display: inline-flex;
+}
+
+.star {
+    font-size: 1rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.star:hover,
+.star:hover ~ .star,
+input:checked ~ .star {
+    color: #ffca08;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.favorite-btn {
+    border: 1px solid #2B3035;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-btn:hover {
+    border-color: #6B757D;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
