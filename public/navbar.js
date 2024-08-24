@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",function() {
 			document.querySelector('#not-logged').style.display = 'none'
 			document.querySelector('#nav-username').innerHTML = user.username
 			document.querySelector('#logged').style.display = 'block'
-			document.querySelector('#nav-profile').href = `profile?user=${user.username}`
+			document.querySelector('#nav-profile').href = `/profile?user=${user.username}`
 
 			document.querySelector('#logout-button').addEventListener('click',async () => {
 

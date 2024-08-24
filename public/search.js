@@ -53,23 +53,22 @@ function fetchResults()
 			const book = results[id]
 		  	const bookHTML = document.createElement('div');
 			bookHTML.id = id;  // Use dynamic id
-			bookHTML.className = 'mb-3';
-			bookHTML.style = 'width: 700px; height: 200px; cursor: pointer; background: rgb(52,58,64); padding-left:20px ; padding-right:20px; gap: 16px; display: flex ; align-items:center; position:relative';
+			bookHTML.className = 'mb-3 card-book';
+			// bookHTML.style = 'width: 700px; height: 200px; cursor: pointer; background: rgb(52,58,64); padding-left:20px ; padding-right:20px; gap: 16px; display: flex ; align-items:center; position:relative';
 			bookHTML.innerHTML = `
-			    <div style="width: 120px; height: 180px; display: flex; justify-content: flex-start; position: relative;">
+			    <div class = 'card-book-img-container' >
 			      <img src="${book.front_img}" style="position: absolute; width: 100%; height: 100%;">
 			      <div style = "z-index: 20; padding-left:5px; padding-right:5px; position: absolute; background: rgba(0, 0, 0, 0.5); bottom:0px; left:0px">${book.rating}/5</div>
 			    </div>
 			    <div style="display: flex; flex-direction: column; gap: 5px; width: 540px; height:200px">
 			      <div style="padding-top: 16px;">
-			        <h5>${book.title}</h5>
-			        <p class="text-secondary-emphasis">${book.author}</p>
-			        <p class="clamped-text">${book.description}</p>
-			        <p style = "position: absolute ; bottom:0px; right:16px"><small class="text-body-secondary">${formatTime(book.creation)}</small></p>
+			        <h5 class = "card-book-title">${book.title}</h5>
+			        <p class="text-secondary-emphasis card-book-author">${book.author}</p>
+			        <p class="clamped-text card-book-description">${book.description}</p>
+			        <p style = "position: absolute ; bottom:0px; right:16px;" class = "card-book-date"><small class="text-body-secondary">${formatTime(book.creation)}</small></p>
 			      </div>
 			    </div>
 			`;
-
 
 			searchResults.appendChild(bookHTML);
 

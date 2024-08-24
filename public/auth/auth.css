@@ -1,0 +1,35 @@
+
+
+
+#loginBlock {
+	width: 400px; height: 500px; display:flex; flex-direction: column; padding-top: 30px; padding-left: 30px; padding-right: 30px; gap: 50px;
+
+}
+
+
+#registerBlock {
+	width: 400px; height: 500px; display:flex; flex-direction: column; padding-top: 30px; padding-left: 30px; padding-right: 30px; gap: 50px;
+
+}
+
+
+@media (max-width:850px)
+{
+	#auth-container {
+		flex-direction: column;
+		margin-top: 60px;
+	}
+
+/*	.input-bar {
+		width:300px !important;
+	}*/
+
+	#loginBlock {
+		width: 320px;
+	}
+
+	#registerBlock {
+		width: 320px;
+	}
+
+}

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded",async function() {
 			  <th scope="row">${index}</th>
 			  <td>${book.rating}/5</td>
 			  <td>
-			    <div style="width: 80px; height: 120px;">
+			    <div class = "table-book-img">
 			      <img style="width: 100%; height: 100%;" src="${book.front_img}">
 			    </div>
 			  </td>

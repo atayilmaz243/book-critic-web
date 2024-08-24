@@ -1,0 +1,50 @@
+
+.profile-picture-container {
+	width: 150px; height: 150px; min-width: 150px; position: relative; overflow: hidden;
+}
+
+#user-info-edit-container {
+	width: 150px; display: flex; flex-direction: column; justify-content: space-between; align-items: end; padding-top: 10px;
+}
+
+#favorite-book-display {
+	max-width: 700px; width: 100%; margin-top: 80px; flex-direction:column; display:none;
+}
+
+.fav-book-img-container {
+
+	width: 100px; min-width: 100px ;height: 150px; position: relative; cursor:pointer;
+}
+
+@media (max-width: 840px)
+{
+
+	.profile-picture-container {
+		width: 100px; height: 100px; min-width: 100px;
+	}
+
+	#profile-username {
+		font-size: 20px;
+	}
+
+	#profile-description {
+		font-size: 16px;	
+	}
+
+	#user-info-container{
+		flex-direction: column;
+	}
+
+	.fav-book-img-container {
+		width: 80px; height: 120px; min-width: 80px;
+	}
+
+
+
+	#user-info-edit-container {
+		width: auto;
+		padding-left: 120px;
+		flex-direction: row;
+		align-items: center;
+	}
+}

@@ -1,0 +1,15 @@
+
+
+.navbar {
+	width: 800px; z-index: 20; display: flex; justify-content: space-between;"
+}
+
+
+@media (max-width:820px)
+{
+	.navbar {
+		flex-direction: column;
+		width: 340px;
+	}
+
+}

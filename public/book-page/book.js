@@ -302,7 +302,7 @@ async function getComments() {
 
 		outerDiv.innerHTML = `
 		    <div style="display:flex; gap:12px;">
-		        <img src="https://storage.googleapis.com/book-critic-app/unknown-user.jpg" style="width:40px;height:40px; border-radius:20px; object-fit:cover">
+		        <img  class = "comment-user-img" src="https://storage.googleapis.com/book-critic-app/unknown-user.jpg" >
 		    </div>
 		    <div class = "comment-body" style="display:flex; flex-direction:column">
 		        <h6 style="margin:0;text-decoration-line: underline; cursor:pointer">${comment.user}</h6>

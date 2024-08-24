@@ -1,0 +1,31 @@
+.clamped-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em; /* 2 lines * 1.5em line-height */
+  line-height: 1.5em; /* line height */
+}
+
+#table-outer-container {
+	display: flex; width:800px; padding-top: 60px;
+}
+
+.table-book-img {
+	width: 80px; height: 120px;
+}
+
+
+@media (max-width:820px)
+{
+	#table-outer-container {
+		width: 95vw;
+		font-size: 12px;
+	}
+
+	.table-book-img {
+		width: 60px;
+		height: 90px;
+	}
+}

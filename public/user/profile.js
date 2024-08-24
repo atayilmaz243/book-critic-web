@@ -120,7 +120,7 @@ async function favoriteBooks(books)
 	const container = document.querySelector('#favorite-book-container')
 
 	data_arr.forEach((data,index) => {
-		container.innerHTML += `<div id='fav-${index}' style = "width: 100px; height: 150px; position: relative; cursor:pointer">
+		container.innerHTML += `<div id='fav-${index}' class = "fav-book-img-container">
 					<img style = "width: 100%; height: 100%; position: absolute;" src = "${data.front_img}">	
 				</div>`;
 
