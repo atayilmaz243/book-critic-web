@@ -24,7 +24,7 @@ async function fetchUser()
 function fetchBook()
 {
 
-	fetch(`http://localhost:3000/fetch-book?id=${id}`)
+	fetch(`/fetch-book?id=${id}`)
 	.then(response => response.json())
 	.then(book => {
 

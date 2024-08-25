@@ -13,11 +13,11 @@ function fetchResults()
 	let path = ""
 	if (by) // if by is not null ,indicates user uses category section
 	{
-		path = `http://localhost:3000/search-category?query=${query}`
+		path = `/search-category?query=${query}`
 	}
 	else
 	{
-		path = `http://localhost:3000/search?query=${query}`
+		path = `/search?query=${query}`
 	}
 
 	fetch(path)

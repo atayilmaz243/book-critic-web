@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded",function() {
 
 	document.head.appendChild(style);
 
-	fetch('http://localhost:3000/getUsername')
+	fetch('/getUsername')
 	.then(response => response.json())
 	.then(async user => {
 		if (user.username)
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded",function() {
     searchInput.addEventListener("input", function() {
 
 
-        fetch(`http://localhost:3000/search?query=${this.value}`)
+        fetch(`/search?query=${this.value}`)
         .then(response => response.json())
         .then(data => {
 

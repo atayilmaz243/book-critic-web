@@ -28,7 +28,7 @@ const formatTime = (timestampObj) => {
 
 function fetchAllBooks()
 {
-	fetch('http://localhost:3000/fetch-all-books')
+	fetch('/fetch-all-books')
 	.then(response => response.json())
 	.then(data => {
 
