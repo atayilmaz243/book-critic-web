@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded",function() {
     	{
     		event.preventDefault();
     		// console.log('aa')
-    		window.location.href = `http://localhost:3000/search-results?query=${this.value}`;
+    		window.location.href = `/search-results?query=${this.value}`;
     	}
     })
     searchInput.addEventListener("input", function() {

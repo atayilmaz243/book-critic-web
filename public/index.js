@@ -82,7 +82,7 @@ function fetchAllBooks()
 			explore_div.appendChild(bookHTML);
 
 			bookHTML.addEventListener('click',() => {
-				  window.location.href = `http://localhost:3000/book?id=${id}`;
+				  window.location.href = `/book?id=${id}`;
 			})
 
 		}
