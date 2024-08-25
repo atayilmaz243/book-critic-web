@@ -48,6 +48,8 @@ async function editProfile() {
 
 		            if (result.success) {
 		                console.log('File uploaded successfully');
+		                location.reload();
+
 		            } else {
 		                console.error('File upload failed:', result.message);
 		            }

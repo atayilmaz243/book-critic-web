@@ -60,10 +60,10 @@
 	}
 
 	.index-search-bar{
-		padding-left: 20px;
-		padding-right: 20px;	
 		max-width: 540px;
-		width: 100vw !important; 
+		width: 100% !important; 
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.index-search-bar input{

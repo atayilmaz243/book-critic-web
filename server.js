@@ -3,11 +3,10 @@ const session = require('express-session');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const ratingRoutes = require('./routes/rating');
 require('dotenv').config();
 
 
-const {getBooksByRating,deleteComment,updateProfile,addComment,getAllBooks,getBook,searchQuery,fetchByCategory,registerUser,loginCheck,getUser,addFavorite,removeFavorite,getComments} = require('./firestore.js');
+const {updateRating,getUserRating,getBookRating,getBooksByRating,deleteComment,updateProfile,addComment,getAllBooks,getBook,searchQuery,fetchByCategory,registerUser,loginCheck,getUser,addFavorite,removeFavorite,getComments} = require('./firestore.js');
 
 const app = express();
 
@@ -29,11 +28,6 @@ app.use(session({
 }));
 
 
-app.use('/', ratingRoutes);
-
-
-
-
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true }); // Create the directory if it does not exist
@@ -51,6 +45,46 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+
+
+
+
+app.get('/getUserRating',isAuthorized, async (req, res) => {
+    const username  = req.session.username
+    const {id} = req.query
+
+    const data = await getUserRating({username,bookId:id})
+    res.json(data)
+});
+
+
+app.get('/getBookRating',async (req, res) => {
+    const {id} = req.query
+    const data = await getBookRating(id)
+    res.json(data)
+});
+
+
+app.post('/updateRating',isAuthorized,async (req, res) => {
+
+  try {
+    const {point,bookId} = req.body;
+    const username = req.session.username
+
+
+    // console.log({point,bookId,username})
+    const new_rating = await updateRating({username,rating:Number(point) ,bookId})
+
+
+    res.status(200).json({success: true,message:"successful update rating",new_rating})   
+
+
+  }  catch (error) {
+    console.log(error)
+    res.status(500).json({message:"error happened on server"})
+  }
+});
+
 
 
 
