@@ -70,66 +70,7 @@ async function makeComment()
 
 		    if (response.ok)
 		    {
-
-		    	const comment_data = await response.json()
-
-		    	document.querySelector('#offcanvas-close-btn').click()
-
-		    	const box = document.querySelector('#comment-box')
-
-				const outerDiv = document.createElement('div');
-
-				outerDiv.style.display = "flex";
-				outerDiv.style.paddingLeft = "16px";
-				outerDiv.style.paddingTop = "10px";
-				outerDiv.style.gap = "16px";
-				outerDiv.style.position = "relative";
-				outerDiv.className = "bg-body-secondary rounded";
-
-				outerDiv.innerHTML = `
-				    <div style="display:flex; gap:12px;">
-				        <img src="https://storage.googleapis.com/book-critic-app/unknown-user.jpg" style="width:40px;height:40px; border-radius:20px; object-fit:cover">
-				    </div>
-				    <div class = 'comment-body' style="display:flex; flex-direction:column">
-				        <h6 style="margin:0;text-decoration-line: underline; cursor:pointer">${user.username}</h6>
-				        <p style="" class=""><small>${comment}</small></p>
-				    </div>
-				    <p class="text-start text-secondary-emphasis" style="margin:0; position:absolute; top:4px; right:10px;"><small>0 minutes ago</small></p>
-				`;
-
-					box.insertBefore(outerDiv, box.firstChild);
-
-		    	loadProfilePicture({username:user.username,div: outerDiv})
-
-
-		    	outerDiv.querySelector('h6').addEventListener('click',() => {
-						window.location.href = `/profile?user=${user.username}`
-					})
-					const buttonDelete = document.createElement('div');
-					buttonDelete.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16"> <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/></svg>`
-					buttonDelete.style.cssText = `position:absolute; width:20px; height:20px; bottom:8px; right:0px; cursor:pointer`
-					outerDiv.querySelector('.comment-body').appendChild(buttonDelete)
-
-
-					buttonDelete.addEventListener('click', async () => {
-					    const response = await fetch('/delete-comment', {
-					      method: 'POST',
-					      headers: {
-					        'Content-Type': 'application/json'
-					      },
-					      body: JSON.stringify({id:comment_data.comment_id})
-					    });
-
-					    if (response.ok)
-					    {
-					    	box.removeChild(outerDiv)
-					    }
-					    else
-					    {
-					    	console.error("Error deleting comment.")
-					    }
-					})
-
+		    	location.reload();
 		    }
 		    else
 		    {
@@ -307,7 +248,7 @@ async function getComments() {
 		    <div class = "comment-body" style="display:flex; flex-direction:column">
 		        <h6 style="margin:0;text-decoration-line: underline; cursor:pointer">${comment.user}</h6>
 		        ${comment.date ? ('<p class="text-start text-secondary-emphasis" style="margin:0; position:absolute; top:4px; right:10px;"><small>' + formatTime(comment.date) + '</small></p>') : ''}
-		        <p style="" class=""><small>${comment.comment}</small></p>
+		        <p style = "padding-right:8px" class=""><small>${comment.comment}</small></p>
 		    </div>
 		`;
 

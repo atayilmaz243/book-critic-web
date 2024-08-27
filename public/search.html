@@ -30,12 +30,12 @@
 	<nav class="navbar">
 	  	<div style = "display: flex; align-items:center; z-index:40">
 		    <a id = 'nav-logo' class="navbar-brand" href="/">
-	    		<img src="./logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+	    		<img src="../logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
 	    		Book Critic
 	    	</a>  		
     		<form class="d-flex flex-column" role="search" style = "position: relative;">
 	        <input id = "nav-search-bar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  autocomplete="off">
-	        <div id="autocomplete-list" class="autocomplete-items bg-body-tertiary" style = "position: absolute; top: 40px; width: 100%"></div>
+	        <div id="autocomplete-list" class="autocomplete-items bg-body-tertiary" style = "position: absolute; top: 40px; width: 100%; min-width: 100%;"></div>
 	     	</form>	
 	  	</div>
 
@@ -45,12 +45,12 @@
 	            Categories
 	          </a>
 	          <ul class="dropdown-menu" style = "position: absolute;">
-	            <li><a class="dropdown-item" href="search-results?by=category&query=Fiction">Fiction</a></li>
-	            <li><a class="dropdown-item" href="search-results?by=category&query=Non-fiction">Non-fiction</a></li>
-	            <li><a class="dropdown-item" href="search-results?by=category&query=Science">Science</a></li>
-	            <li><a class="dropdown-item" href="search-results?by=category&query=History">History</a></li>
-	            <li><a class="dropdown-item" href="search-results?by=category&query=Classic Literature">Classic Literature</a></li>
-	            <li><a class="dropdown-item" href="search-results?by=category&query=Philosophy">Philosophy</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=Fiction">Fiction</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=Non-fiction">Non-fiction</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=Science">Science</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=History">History</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=Classic Literature">Classic Literature</a></li>
+	            <li><a class="dropdown-item" href="/search-results?by=category&query=Philosophy">Philosophy</a></li>
 
 
 	          </ul>
@@ -78,6 +78,8 @@
 	        	</li> 
 	      	</ul>
 	</nav>
+
+
 	
 	<div style = "padding-top: 60px; width: 100vw; position: relative; display: flex; flex-direction: column; max-width: 800px; padding-left: 20px; padding-right: 20px;">
 		
