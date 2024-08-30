@@ -6,7 +6,7 @@ The purpose of the project is to create a platform for critiquing, rating, and s
 <br>
 <br>
 
-The project currently has 5 pages:
+The project currently has 6 pages:
 <br>
 - **Main Page**
   - Users can search for the book they are looking for using the search bar (*note: the search bar is case-sensitive) and view the latest books added to the website.
@@ -21,6 +21,8 @@ The project currently has 5 pages:
 - **Login/Register Page**
     - Users must register to rate and comment on books and upload a profile picture.
     - I used password hashing before storing the passwords, but nevertheless, please do not use your real password.
+- **Category/Search Page**
+   - Users can search for a book by its category or by its name via the search bar.
 
  
 The website is responsive and can be used on both mobile devices and computers.
