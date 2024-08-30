@@ -21,6 +21,9 @@ The project currently has 5 pages:
 - **Login/Register Page**
     - Users must register to rate and comment on books and upload a profile picture.
     - I used password hashing before storing the passwords, but nevertheless, please do not use your real password.
+
+ 
+The website is responsive and can be used on both mobile devices and computers.
       
 <h2>How I Created the App / Technologies Used</h2>
 
