@@ -118,6 +118,10 @@ display: flex; gap:6px; justify-content: center; align-items: center; padding-le
         margin-top: 100px;
     }
 
+    #book-body-container {
+        padding-top: 40px;
+    }
+
 }
 
 
