@@ -71,18 +71,18 @@ async function userProfile() {
 
 	const response = await fetch(`/getUserProfile?user=${profile_user}`)
 
-	const data = await response.json()
-
 
 	if (response.ok)
 	{
-		let numberOfFavorites = Object.keys(data.favorites).length;
+		const data = await response.json()
+		let numberOfFavorites = data.favorites ? Object.keys(data.favorites).length : 0;
 		document.querySelector('#profile-username').innerHTML = `${data.username}`
-		document.querySelector('#profile-description').innerHTML = `${data.description}`
+		document.querySelector('#profile-description').innerHTML = (data.description ? `${data.description}` : '~ No description ~')
 		document.querySelector('#profile-count-favorites').innerHTML = `${numberOfFavorites}`
 
 		loadProfilePicture(data.img)
-		favoriteBooks(data.favorites)
+		if (data.favorites) 
+			favoriteBooks(data.favorites)
 	}
 }
 
