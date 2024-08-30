@@ -184,7 +184,7 @@ async function loadProfilePicture({username,div})
 
 const formatTime = (timestampObj) => {
   // Convert the Firestore timestamp object into a JavaScript Date object
-  const timestampInMilliseconds = timestampObj.seconds * 1000 + timestampObj.nanoseconds / 1000000;
+  const timestampInMilliseconds = timestampObj._seconds * 1000 + timestampObj._nanoseconds / 1000000;
   const timestampDate = new Date(timestampInMilliseconds);
 
   const currentTime = new Date();
@@ -205,6 +205,7 @@ const formatTime = (timestampObj) => {
     return timestampDate.toLocaleDateString('en-US', dateOptions);
   }
 };
+
 
 async function getComments() {
 
